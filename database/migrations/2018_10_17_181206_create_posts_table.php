@@ -15,11 +15,11 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string('title');
-            $table->string('body');
-            $table->string('video');
+            $table->integer('user_id')->unsigned(); // FOREIGN KEY KOLONA USER_ID IZ TABELE USeRS
+            $table->foreign('user_id')->references('id')->on('users'); // FOREIGN KEY KOLONA USER_ID IZ TABELE USeRS
+            $table->string('title'); // Naziv posta
+            $table->string('body'); // TExt posta
+            $table->string('video'); // Ime vide-a
             $table->timestamps();
         });
     }

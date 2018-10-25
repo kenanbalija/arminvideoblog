@@ -1,5 +1,9 @@
 <?php
-
+/*
+ *
+ * OVO JE VALIDACIJA INPUT FIELDOVA IZ FORME
+ *
+ * */
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;

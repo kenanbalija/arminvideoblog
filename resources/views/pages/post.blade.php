@@ -16,11 +16,16 @@
                         <div class="col-md-12">
                             <div class="text-center">{{ $post->title }}</div>
                             <div class="text-center">{{ $post->body }}</div>
-                            <img src="/uploads/{{ $post->video }}" alt="" class="img-responsive">
+                            <video width="320" height="240" controls>
+                                <source src="/uploads/{{ $post->video }}" type="video/webm">
+                                <source src="/uploads/{{ $post->video }}" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div class="row">
                             @foreach ($comments as $comment)
-                                <p>{{ $comment->value }}</p>
+                                <p>{{ $comment['value'] }}</p>
+                                <p>By: <b>{{ $comment['user'] }}</b></p>
                             @endforeach
                             <form action="{{ url('/comment') }}" method="POST" class="col-md-12">
                                 {{ csrf_field() }}

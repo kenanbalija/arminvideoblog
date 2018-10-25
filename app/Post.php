@@ -12,8 +12,11 @@ class Post extends Model
     /**
      * Get the comments for the blog post.
      */
+
+    // laksi nacin pristpa KOMENTARIMA koji su vezani ID-om za ovaj POST
     public function comments()
     {
+        // samo ime ti kaze da ovaj post ima MNOGO komentara koji mu pripadaju
         return $this->hasMany('App\Comment');
     }
 

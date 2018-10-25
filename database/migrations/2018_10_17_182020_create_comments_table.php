@@ -15,10 +15,10 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('post_id')->unsigned();
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->integer('user_id')->unsigned(); // FOREIGN KEY KOLONA USER_ID IZ TABELE USeRS
+            $table->foreign('user_id')->references('id')->on('users'); // FOREIGN KEY KOLONA USER_ID IZ TABELE USeRS
+            $table->integer('post_id')->unsigned(); // FOREIGN KEY KOLONA POST_ID IZ TABELE USeRS
+            $table->foreign('post_id')->references('id')->on('posts'); // FOREIGN KEY KOLONA POST_ID IZ TABELE USeRS
             $table->string('value');
             $table->timestamps();
         });

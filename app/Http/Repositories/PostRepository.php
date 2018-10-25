@@ -1,5 +1,9 @@
 <?php
-
+/*
+ *
+ * REPOSITORIJI NAM SLUZE KAKO BISMO KOMUNICIRALI SA DATABAZOM I KAKO BI SMO STO MANJE KODA PISALI U KONTROLERIMA
+ *
+ * */
 
 namespace App\Http\Repositories;
 
@@ -12,9 +16,11 @@ class PostRepository
      */
     private $post;
 
+    // Dependency Injection Modela Comment u konstruktor Klase PostRepository kako bi lakse pristupio iz vise metoda tom file-u
+    // sad npr ne moras inicijalizrati model u nekoj metodi, a to bi vako radio: "$model = new Post" ili "$post = new Comment"
     public function __construct(Post $post)
     {
-
+        // inicijaliziras model pri keriranju klase PostRepository
         $this->post = $post;
     }
 
